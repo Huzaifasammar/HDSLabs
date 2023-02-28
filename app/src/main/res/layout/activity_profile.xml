@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/white"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.AccountFragment">
-
-
-
+    tools:context=".activities.ProfileActivity">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/topDetailsLayout"
         android:layout_width="match_parent"
@@ -15,17 +13,28 @@
         android:background="@color/appBlueColor"
         app:layout_constraintTop_toTopOf="parent">
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:tint="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="@dimen/_10sdp"
+            android:src="@drawable/arrow_back"
+            android:id="@+id/backarrow"></ImageView>
+
         <TextView
             android:id="@+id/fullName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:text="Abdul Huzaifa"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="Profile"
+            android:padding="@dimen/_3sdp"
             android:textColor="@color/white"
             android:textSize="@dimen/_16ssp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -57,7 +66,7 @@
             android:layout_margin="@dimen/_8sdp"
             android:ellipsize="end"
             android:maxLines="2"
-            android:text="house number 616,F-8/5 near shaheen chemist Islamabad"
+            android:text=""
             android:textColor="@color/white"
             android:textSize="@dimen/_12ssp"
             app:layout_constraintBottom_toBottomOf="@id/locationImg"
@@ -66,15 +75,45 @@
             app:layout_constraintTop_toTopOf="@id/locationImg" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@id/topDetailsLayout">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_margin="@dimen/_10sdp"
-        app:layout_constraintTop_toBottomOf="@id/topDetailsLayout">
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/_15sdp">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Employee ID"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="@color/appSilverColor"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <TextView
+                android:id="@+id/employee_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@color/appSilverColor"
+                android:layout_height="@dimen/_1sdp"/>
+
+        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -92,7 +131,6 @@
                 android:id="@+id/userName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="username"
                 android:textSize="@dimen/_12ssp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
@@ -123,7 +161,6 @@
                 android:id="@+id/userEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="email@.com"
                 android:textSize="@dimen/_12ssp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
@@ -153,7 +190,6 @@
                 android:id="@+id/userGender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="male"
                 android:textSize="@dimen/_12ssp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
@@ -183,7 +219,6 @@
                 android:id="@+id/userAge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="45 - year"
                 android:textSize="@dimen/_12ssp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
@@ -206,15 +241,14 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Account No"
+                android:text="Phone Number"
                 android:textSize="@dimen/_10sdp"
                 android:textColor="@color/appSilverColor"
                 app:layout_constraintTop_toTopOf="parent"/>
             <TextView
-                android:id="@+id/userccount"
+                android:id="@+id/phonenumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="01416"
                 android:textSize="@dimen/_12ssp"
                 android:textStyle="bold"
                 android:textColor="@color/black"
@@ -237,58 +271,59 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="password"
+                android:text="Date of joining"
                 android:textSize="@dimen/_10sdp"
                 android:textColor="@color/appSilverColor"
                 app:layout_constraintTop_toTopOf="parent"/>
-
-
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <TextView
+                android:id="@+id/doj"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toTopOf="parent"/>
 
-                <EditText
-                    android:id="@+id/etPassword"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:background="@null"
-                    android:ems="10"
-                    android:inputType="textPassword"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black"
-                    android:textSize="@dimen/_12ssp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/showPassword"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:id="@+id/showPassword"
-                    android:layout_width="@dimen/_25sdp"
-                    android:layout_height="@dimen/_25sdp"
-                    android:layout_marginEnd="@dimen/_5sdp"
-                    android:paddingEnd="@dimen/_5sdp"
-                    android:src="@drawable/ic_show_password"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:id="@+id/hidePassword"
-                    android:layout_width="@dimen/_25sdp"
-                    android:layout_height="@dimen/_25sdp"
-                    android:layout_marginEnd="@dimen/_5sdp"
-                    android:paddingEnd="@dimen/_5sdp"
-                    android:src="@drawable/ic_hide_password"
-                    android:visibility="invisible"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@color/appSilverColor"
+                android:layout_height="@dimen/_1sdp"/>
 
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/_15sdp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Designation"
+                android:textSize="@dimen/_10sdp"
+                android:textColor="@color/appSilverColor"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <TextView
+                android:id="@+id/designation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@color/appSilverColor"
+                android:layout_height="@dimen/_1sdp"/>
+
+        </LinearLayout>
+
+
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/logoutBtn"
@@ -302,6 +337,9 @@
             android:backgroundTint="@color/appMainColor"/>
 
     </LinearLayout>
+</ScrollView>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

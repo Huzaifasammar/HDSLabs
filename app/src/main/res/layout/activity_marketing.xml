@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/appBackColor"
+    android:layout_height="match_parent"
+    tools:context=".activities.MarketingActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolbar"
+            android:background="@color/appBlueColor"
+            app:layout_constraintTop_toTopOf="parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/arrow_back"
+                    app:tint="@color/white"
+                    android:id="@+id/arrowback" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Doctor Visit Form"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:textSize="@dimen/_18sdp"
+                    android:padding="@dimen/_4sdp" />
+
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <LinearLayout
+            android:id="@+id/centerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tf_name"
+                style="@style/LoginTextInputLayoutStyle"
+                android:layout_width="match_parent"
+
+                app:startIconTint="@color/appBlueColor"
+                app:hintTextColor="@color/appBlueColor"
+                app:boxStrokeErrorColor="@color/red"
+                app:startIconDrawable="@drawable/person"
+                app:boxStrokeColor="@color/appBlueColor"
+                android:focusable="true"
+                android:textColorHint="@color/hint"
+                android:layout_marginTop="10dp"
+                app:errorTextColor="@color/red"
+                android:layout_height="wrap_content"
+                android:hint="">
+
+                <EditText
+                    android:id="@+id/et_name"
+                    android:inputType="text"
+                    android:layout_width="match_parent"
+                    android:singleLine="true"
+                    android:padding="20dp"
+                    android:textColor="@color/black"
+                    android:textCursorDrawable="@drawable/text_cursor"
+                    android:layout_height="wrap_content"
+                    android:hint="Docotr Name"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tf_email"
+                style="@style/LoginTextInputLayoutStyle"
+                android:layout_width="match_parent"
+
+                app:startIconTint="@color/appBlueColor"
+                app:hintTextColor="@color/appBlueColor"
+                app:boxStrokeErrorColor="@color/red"
+                app:startIconDrawable="@drawable/custom_email_icon"
+                app:boxStrokeColor="@color/appBlueColor"
+                android:focusable="true"
+                android:textColorHint="@color/hint"
+                android:layout_marginTop="10dp"
+                app:errorTextColor="@color/red"
+                android:layout_height="wrap_content"
+                android:hint="">
+
+                <EditText
+                    android:id="@+id/et_email"
+                    android:inputType="textEmailAddress"
+                    android:layout_width="match_parent"
+                    android:singleLine="true"
+                    android:padding="20dp"
+                    android:textColor="@color/black"
+                    android:textCursorDrawable="@drawable/text_cursor"
+                    android:layout_height="wrap_content"
+                    android:hint="Doctor Email"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tf_contact"
+                    style="@style/LoginTextInputLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_toLeftOf="@id/view"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    app:startIconTint="@color/appBlueColor"
+                    app:hintTextColor="@color/appBlueColor"
+                    app:boxStrokeErrorColor="@color/red"
+                    app:startIconDrawable="@drawable/phone"
+                    app:boxStrokeColor="@color/appBlueColor"
+                    android:focusable="true"
+                    android:textColorHint="@color/hint"
+                    android:layout_marginTop="10dp"
+                    app:errorTextColor="@color/red"
+                    android:layout_height="wrap_content"
+                    android:hint="">
+
+                    <EditText
+                        android:id="@+id/et_contact"
+                        android:inputType="number"
+                        android:layout_width="match_parent"
+                        android:singleLine="true"
+                        android:padding="20dp"
+                        android:textColor="@color/black"
+                        android:textCursorDrawable="@drawable/text_cursor"
+                        android:layout_height="wrap_content"
+                        android:hint="Contact"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:id="@+id/view"
+                    android:layout_centerHorizontal="true" />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tf_hospital"
+                    style="@style/LoginTextInputLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_toRightOf="@id/view"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    app:startIconTint="@color/appBlueColor"
+                    app:hintTextColor="@color/appBlueColor"
+                    app:boxStrokeErrorColor="@color/red"
+                    app:startIconDrawable="@drawable/hospital"
+                    app:boxStrokeColor="@color/appBlueColor"
+                    android:focusable="true"
+                    android:textColorHint="@color/hint"
+                    android:layout_marginTop="10dp"
+                    app:errorTextColor="@color/red"
+                    android:layout_height="wrap_content"
+                    android:hint="">
+
+                    <EditText
+                        android:id="@+id/et_hospital"
+                        android:inputType="text"
+                        android:layout_width="match_parent"
+                        android:singleLine="true"
+                        android:padding="20dp"
+                        android:textColor="@color/black"
+                        android:textCursorDrawable="@drawable/text_cursor"
+                        android:layout_height="wrap_content"
+                        android:hint="Hospital Name"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </RelativeLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tf_address"
+                style="@style/LoginTextInputLayoutStyle"
+                android:layout_width="match_parent"
+                app:startIconTint="@color/appBlueColor"
+                app:hintTextColor="@color/appBlueColor"
+                app:boxStrokeErrorColor="@color/red"
+                app:startIconDrawable="@drawable/map"
+                app:boxStrokeColor="@color/appBlueColor"
+                android:focusable="true"
+                android:textColorHint="@color/hint"
+                android:layout_marginTop="10dp"
+                app:errorTextColor="@color/red"
+                android:layout_height="wrap_content"
+                android:hint="">
+
+                <EditText
+                    android:id="@+id/et_address"
+                    android:editable="false"
+                    android:layout_width="match_parent"
+                    android:inputType="textMultiLine"
+                    android:padding="20dp"
+                    android:textColor="@color/black"
+                    android:textCursorDrawable="@drawable/text_cursor"
+                    android:layout_height="wrap_content"
+                    android:hint="Address"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tf_notes"
+                style="@style/LoginTextInputLayoutStyle"
+                android:layout_width="match_parent"
+                app:startIconTint="@color/appBlueColor"
+                app:hintTextColor="@color/appBlueColor"
+                app:boxStrokeErrorColor="@color/red"
+                app:startIconDrawable="@drawable/notes"
+                app:boxStrokeColor="@color/appBlueColor"
+                android:focusable="true"
+                android:textColorHint="@color/hint"
+                android:layout_marginTop="10dp"
+                app:errorTextColor="@color/red"
+                android:layout_height="wrap_content"
+                android:hint="">
+
+                <EditText
+                    android:id="@+id/et_notes"
+                    android:inputType="textMultiLine"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/black"
+                    android:padding="15dp"
+                    android:textSize="@dimen/_12sdp"
+                    android:textCursorDrawable="@drawable/text_cursor"
+                    android:layout_height="wrap_content"
+                    android:hint="Meeting Notes"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_30sdp"
+            android:background="@drawable/btn_round"
+            app:layout_constraintTop_toBottomOf="@id/centerLayout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="Submit"
+            android:backgroundTint="@color/appMainColor"
+            android:textColor="@color/white"
+            android:id="@+id/btnattendance" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

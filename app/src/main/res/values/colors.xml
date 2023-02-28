@@ -17,5 +17,8 @@
     <color name="appBlueColor">#015194</color>
     <color name="appToolbarColor">#005AA8</color>
 
+    <color name="red">#ff0000</color>
+    <color name="hint">#808080</color>
+
 
 </resources>

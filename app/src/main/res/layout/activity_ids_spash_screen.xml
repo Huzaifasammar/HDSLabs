@@ -42,7 +42,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Copyrights 2022. All rights reserved"
+        android:text="Copyrights 2023. All rights reserved"
         android:textColor="@color/white"
         android:layout_marginBottom="@dimen/_45sdp"
         android:textSize="@dimen/_10ssp"
